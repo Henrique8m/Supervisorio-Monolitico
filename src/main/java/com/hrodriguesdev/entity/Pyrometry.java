@@ -1,6 +1,7 @@
 package com.hrodriguesdev.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,81 +16,103 @@ public class Pyrometry implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String time;
-	private String pcoroa;
-	private String ptopo;
-	private String tcoroa;
-	private String ttopo;
-	private String vazao;
-	private String secador;
-
-	public Pyrometry(String time, String pcoroa, String ptopo, String tcoroa, String ttopo, String vazao,
-			String secador) {
-		this.time = time;
+	private Double pcoroa;
+	private Double ptopo;
+	private Double vazao;
+	private int tcoroa;	
+	private int ttopo;	
+	private int secador;
+	
+	private int timeStart;
+	private int timeFinish;
+	private Date date;
+	
+	public Pyrometry(Double pcoroa, Double ptopo, Double vazao, int tcoroa, int ttopo, int secador, int timeStart,
+			int timeFinish, Date date) {
+		super();
 		this.pcoroa = pcoroa;
 		this.ptopo = ptopo;
+		this.vazao = vazao;
 		this.tcoroa = tcoroa;
 		this.ttopo = ttopo;
-		this.vazao = vazao;
 		this.secador = secador;
+		this.timeStart = timeStart;
+		this.timeFinish = timeFinish;
+		this.date = date;
 	}
 
 	public Pyrometry() {}
-
-	public String getTime() {
-		return time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-	}
-
-	public String getPcoroa() {
+	
+	public Double getPcoroa() {
 		return pcoroa;
 	}
 
-	public void setPcoroa(String pcoroa) {
+	public void setPcoroa(Double pcoroa) {
 		this.pcoroa = pcoroa;
 	}
 
-	public String getPtopo() {
+	public Double getPtopo() {
 		return ptopo;
 	}
 
-	public void setPtopo(String ptopo) {
+	public void setPtopo(Double ptopo) {
 		this.ptopo = ptopo;
 	}
 
-	public String getTcoroa() {
-		return tcoroa;
-	}
-
-	public void setTcoroa(String tcoroa) {
-		this.tcoroa = tcoroa;
-	}
-
-	public String getTtopo() {
-		return ttopo;
-	}
-
-	public void setTtopo(String ttopo) {
-		this.ttopo = ttopo;
-	}
-
-	public String getVazao() {
+	public Double getVazao() {
 		return vazao;
 	}
 
-	public void setVazao(String vazao) {
+	public void setVazao(Double vazao) {
 		this.vazao = vazao;
 	}
 
-	public String getSecador() {
+	public int getTcoroa() {
+		return tcoroa;
+	}
+
+	public void setTcoroa(int tcoroa) {
+		this.tcoroa = tcoroa;
+	}
+
+	public int getTtopo() {
+		return ttopo;
+	}
+
+	public void setTtopo(int ttopo) {
+		this.ttopo = ttopo;
+	}
+
+	public int getSecador() {
 		return secador;
 	}
 
-	public void setSecador(String secador) {
+	public void setSecador(int secador) {
 		this.secador = secador;
+	}
+
+	public int getTimeStart() {
+		return timeStart;
+	}
+
+	public void setTimeStart(int timeStart) {
+		this.timeStart = timeStart;
+	}
+
+	public int getTimeFinish() {
+		return timeFinish;
+	}
+
+	public void setTimeFinish(int timeFinish) {
+		this.timeFinish = timeFinish;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public Long getId() {

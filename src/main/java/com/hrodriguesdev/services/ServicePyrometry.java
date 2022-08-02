@@ -1,5 +1,7 @@
 package com.hrodriguesdev.services;
 
+import java.sql.Date;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,10 @@ public class ServicePyrometry {
 		if(list.size() > 0)
 			return list.get(list.size()-1);
 		return null; 
+	}
+
+	public Pyrometry findByDate(Date date) throws SQLException{
+		return repository.findByDate(date).orElseThrow(() -> new SQLException() );
 	}
 
 }
